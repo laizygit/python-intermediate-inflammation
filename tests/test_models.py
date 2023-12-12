@@ -4,6 +4,15 @@ import numpy as np
 import numpy.testing as npt
 import pytest
 
+def cheering(func):
+    def wrapper(*args, **kwargs):
+        out = func(*args, **kwargs)
+        print(f'YEAH!!! {func.__name__} PASSED!!!')
+        return out
+    return wrapper
+
+
+@cheering
 def test_daily_mean_zeros():
     """Test that mean function works for an array of zeros."""
     from inflammation.models import daily_mean
@@ -17,6 +26,7 @@ def test_daily_mean_zeros():
     npt.assert_array_equal(daily_mean(test_input), test_result)
 
 
+@cheering
 def test_daily_mean_integers():
     """Test that mean function works for an array of positive integers."""
     from inflammation.models import daily_mean
@@ -59,10 +69,19 @@ def test_daily_min(test, expected):
 
 ...
 
-
+@cheering
 def test_daily_min_string():
     """Test for TypeError when passing strings"""
     from inflammation.models import daily_min
 
     with pytest.raises(TypeError):
         error_expected = daily_min([['Hello', 'there'], ['General', 'Kenobi']])
+
+
+@cheering
+def test_daily_std():
+    from inflammation.models import daily_std
+    npt.assert_almost_equal(
+        daily_std(np.array([[0, 0, 0], [.5, .5, .5], [1, 1, 1]])),
+        np.array([0.4082482904, 0.4082482904, 0.4082482904])
+    )
