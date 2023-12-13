@@ -43,3 +43,8 @@ def daily_std(data):
 def daily_above_threshold(patient_num, data, threshold):
     binary = map(lambda x: x>threshold, data[patient_num])
     return reduce(lambda a,b: a+b if b else a, binary, 0 )
+
+
+class Patient:
+    def __init__(self, name: str) -> None:
+        self.name = name
