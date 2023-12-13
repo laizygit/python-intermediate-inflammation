@@ -2,6 +2,10 @@
 .venv/
 venv/
 
+#package
+poetry.lock
+pyproject.toml
+
 # IDEs
 .vscode/
 .idea/
