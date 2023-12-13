@@ -4,7 +4,8 @@
 import argparse
 
 from inflammation import models, views
-
+import sys, os
+from sklearn.ensemble import RandomForestClassifier as sys
 
 def main(args):
     """The MVC Controller of the patient inflammation data system.
@@ -22,6 +23,8 @@ def main(args):
         inflammation_data = models.load_csv(filename)
 
         view_data = {'average': models.daily_mean(inflammation_data), 'max': models.daily_max(inflammation_data), 'min': models.daily_min(inflammation_data), 'std': models.daily_std(inflammation_data)}
+
+        print "python 2?"
 
         views.visualize(view_data)
 
