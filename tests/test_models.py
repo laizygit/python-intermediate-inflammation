@@ -56,7 +56,17 @@ def test_daily_min(test, expected):
 
 
 
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        ([ [0,0,0], [0,0,0], [0,0,0] ], [0,0,0,]),
+        ([ [1,2,3], [3,2,1], [4,5,6] ], [1.24721913, 1.41421356, 2.05480467]),
+    ])
 
+def test_daily_std(test, expected):
+    """Test std function"""
+    from inflammation.models import daily_std
+    npt.assert_allclose(daily_std(np.array(test)), np.array(expected))
 ...
 
 

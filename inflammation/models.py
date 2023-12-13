@@ -8,7 +8,7 @@ and each column represents a single day across all patients.
 """
 
 import numpy as np
-
+from functools import reduce
 
 def load_csv(filename):
     """Load a Numpy array from a CSV
@@ -38,3 +38,7 @@ def daily_min(data):
 def daily_std(data):
     """Calculate the daily standard deviation of a 2D inflammation array"""
     return np.std(data, axis=0)
+
+def daily_above_threshold(patient_num, data, threshold):
+    binary = map(lambda x: x>threshold, data[patient_num])
+    return reduce(lambda a,b: a+b if b else a, binary, 0 )
