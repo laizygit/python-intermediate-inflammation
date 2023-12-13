@@ -4,7 +4,6 @@
 import argparse
 
 from inflammation import models, views
-import sys, os
 
 def main(args):
     """The MVC Controller of the patient inflammation data system.
