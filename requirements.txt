@@ -22,7 +22,7 @@ fonttools==4.46.0
 idna==3.6
 importlib-metadata==7.0.0
 importlib-resources==6.1.1
-inflammation @ file:///Users/andrewb/Documents/Int_res_soft_dev/python-intermediate-inflammation/dist/inflammation-1.0.0-py3-none-any.whl#sha256=96c3c171dfb5a41af7fc5d63a5cbd553e1cb527b3520ea3a7e4a59e50720ce82
+inflammation @ file:/dist/inflammation-1.0.0-py3-none-any.whl#sha256=96c3c171dfb5a41af7fc5d63a5cbd553e1cb527b3520ea3a7e4a59e50720ce82
 iniconfig==2.0.0
 installer==0.7.0
 isort==5.13.1
