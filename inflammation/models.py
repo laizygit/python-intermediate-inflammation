@@ -10,8 +10,6 @@ and each column represents a single day across all patients.
 import numpy as np
 from functools import reduce
 
-import pandas as pd
-from scipy.optimize import curve_fit
 
 def load_csv(filename):
     """Load a Numpy array from a CSV
@@ -23,7 +21,6 @@ def load_csv(filename):
 
 def daily_mean(data):
     """Calculate the daily mean of a 2D inflammation data array."""
-    df = pd.DataFrame(data)
     return np.mean(data, axis=0)
 
 
