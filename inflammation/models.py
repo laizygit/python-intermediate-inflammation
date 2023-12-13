@@ -10,7 +10,6 @@ and each column represents a single day across all patients.
 import numpy as np
 from functools import reduce
 
-from scipy.optimize import curve_fit
 
 def load_csv(filename):
     """Load a Numpy array from a CSV
